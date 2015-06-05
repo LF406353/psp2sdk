@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$unionSceAudioencInfo.html" title="SceAudioencInfo" alt="" coords="25,101,145,131"/>
+<area shape="rect" id="node4" href="$structSceAudioencInfoCelp.html" title="SceAudioencInfoCelp" alt="" coords="5,5,152,35"/>
+<area shape="rect" id="node6" href="$unionSceAudioencOptInfo.html" title="SceAudioencOptInfo" alt="" coords="183,101,324,131"/>
+<area shape="rect" id="node8" href="$structSceAudioencOptInfoCelp.html" title="SceAudioencOptInfoCelp" alt="" coords="176,5,344,35"/>
+</map>

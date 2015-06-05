@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['sce_5fappmgr_5ferror_5fbusy',['SCE_APPMGR_ERROR_BUSY',['../appmgr_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba806b6249641eed6e3b99fe9a9036c983',1,'appmgr.h']]],
+  ['sce_5fappmgr_5ferror_5finvalid',['SCE_APPMGR_ERROR_INVALID',['../appmgr_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac704cf756ac0c7fc05aa0d20bf5d7082',1,'appmgr.h']]],
+  ['sce_5fappmgr_5ferror_5finvalid_5fself_5fpath',['SCE_APPMGR_ERROR_INVALID_SELF_PATH',['../appmgr_8h.html#a06fc87d81c62e9abb8790b6e5713c55baf867515f2ab516d22bed1df741e1a290',1,'appmgr.h']]],
+  ['sce_5fappmgr_5ferror_5fnull_5fpointer',['SCE_APPMGR_ERROR_NULL_POINTER',['../appmgr_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3e88f785f699bd45efd239ed2b4f4e38',1,'appmgr.h']]],
+  ['sce_5fappmgr_5ferror_5fstate',['SCE_APPMGR_ERROR_STATE',['../appmgr_8h.html#a06fc87d81c62e9abb8790b6e5713c55bafc6444441584cd3bb221c6dbd58b353d',1,'appmgr.h']]],
+  ['sce_5faudio_5fin_5ferror_5fbusy',['SCE_AUDIO_IN_ERROR_BUSY',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57aaf35bb52dc924ad77e10a8c0fc7f4885',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5ffatal',['SCE_AUDIO_IN_ERROR_FATAL',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a74b0f071efb8647de3441a15a0b96f1a',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fpointer',['SCE_AUDIO_IN_ERROR_INVALID_POINTER',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a5bf1f3890489da0880e376c3def5f3b9',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fport',['SCE_AUDIO_IN_ERROR_INVALID_PORT',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0bd19f43d7f1bdfc42e26ca75f35c54f',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fport_5fparam',['SCE_AUDIO_IN_ERROR_INVALID_PORT_PARAM',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a331c76dcdf481f0fde08d4fb3fe11910',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fport_5ftype',['SCE_AUDIO_IN_ERROR_INVALID_PORT_TYPE',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a3c576051078ad8374a033b1a081d8c54',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fsample_5ffreq',['SCE_AUDIO_IN_ERROR_INVALID_SAMPLE_FREQ',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a304714f75da98e79d1dcca568c93aa68',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5finvalid_5fsize',['SCE_AUDIO_IN_ERROR_INVALID_SIZE',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a35bdf669ddfbf4d998046fbf6de95238',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5fnot_5fopened',['SCE_AUDIO_IN_ERROR_NOT_OPENED',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a82a478e6fe50da6cf1a9a29e0b9f1594',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5fout_5fof_5fmemory',['SCE_AUDIO_IN_ERROR_OUT_OF_MEMORY',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57ae74ee704b2c1df5cf7d6aa883e5d7d94',1,'audioin.h']]],
+  ['sce_5faudio_5fin_5ferror_5fport_5ffull',['SCE_AUDIO_IN_ERROR_PORT_FULL',['../audioin_8h.html#ab04a0655cd1e3bcac5e8f48c18df1a57a124621b1ade9c8d226e0966077a0876c',1,'audioin.h']]],
+  ['sce_5ftouch_5fmax_5freport',['SCE_TOUCH_MAX_REPORT',['../touch_8h.html#af3520ff6d43011872bab77edd27d4de3aa3e4b337c895c44be3754e0e532a96fb',1,'touch.h']]],
+  ['sce_5ftouch_5fport_5fback',['SCE_TOUCH_PORT_BACK',['../touch_8h.html#ae8a3b6a5d0d3244ed73924ab2421a0d0a2e861439acd3722f5c25f1a13e0b8758',1,'touch.h']]],
+  ['sce_5ftouch_5fport_5ffront',['SCE_TOUCH_PORT_FRONT',['../touch_8h.html#ae8a3b6a5d0d3244ed73924ab2421a0d0a0d2580e55567d3c921b1031a4684f6a7',1,'touch.h']]],
+  ['sce_5ftouch_5fport_5fmax_5fnum',['SCE_TOUCH_PORT_MAX_NUM',['../touch_8h.html#ae8a3b6a5d0d3244ed73924ab2421a0d0a60ab295a1586005154cf1c5bb888336f',1,'touch.h']]],
+  ['system_5fparam_5ftime_5fformat_5f12hr',['SYSTEM_PARAM_TIME_FORMAT_12HR',['../system__param_8h.html#a84627a72058502328269676b81780f89a3227b9831d0718c363fd01a157b15079',1,'system_param.h']]],
+  ['system_5fparam_5ftime_5fformat_5f24hr',['SYSTEM_PARAM_TIME_FORMAT_24HR',['../system__param_8h.html#a84627a72058502328269676b81780f89a32e61897f9445faa46d48f1024b477e9',1,'system_param.h']]]
+];

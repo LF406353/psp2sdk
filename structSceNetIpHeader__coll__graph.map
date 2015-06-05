@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$unionSceNetIpHeaderUnion.html" title="SceNetIpHeaderUnion" alt="" coords="11,101,163,131"/>
+<area shape="rect" id="node4" href="$structSceNetIpHeaderIpVerHl.html" title="SceNetIpHeaderIpVerHl" alt="" coords="5,5,168,35"/>
+<area shape="rect" id="node6" href="$structSceNetInAddr.html" title="SceNetInAddr" alt="" coords="187,101,291,131"/>
+</map>
