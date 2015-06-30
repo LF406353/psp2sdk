@@ -27,7 +27,10 @@ SECTIONS
 	.sceImport.rodata : { *(.sceImport.rodata) } :text
 
 	.sceFNID.rodata : { KEEP(*(.sceFNID.rodata)) } :text
+	.sceVNID.rodata : { KEEP(*(.sceVNID.rodata)) } :text
+
 	.sceFStub.rodata : { KEEP(*(.sceFStub.rodata)) } :text
+	.sceVStub.rodata : { KEEP(*(.sceVStub.rodata)) } :text
 
 	.rodata : { *(.rodata) } :text
 
@@ -74,6 +77,12 @@ SECTIONS
 	.rel.sceFStub.rodata :
 	{
 		*(.rel.sceFStub.rodata)
+		. = .;
+	} :rela
+
+	.rel.sceVStub.rodata :
+	{
+		*(.rel.sceVStub.rodata)
 		. = .;
 	} :rela
 
