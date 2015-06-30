@@ -25,10 +25,7 @@ if test "$RANLIB" = :; then
 	AC_MSG_ERROR(ranlib not found.)
 fi
 
-CFLAGS="$CFLAGS -I\$(top_srcdir)/include"
-if test "$ac_compiler_gnu" = yes; then
-	CFLAGS="$CFLAGS -Wall -mcpu=cortex-a9 -mfpu=neon-fp16"
-fi
+CFLAGS="$CFLAGS -Wall -I\$(top_srcdir)/include -mcpu=cortex-a9 -mfpu=neon-fp16"
 
 AC_CHECK_TOOL(AR, ar, :)
 AM_PROG_AS
