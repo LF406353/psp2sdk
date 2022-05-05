@@ -7,59 +7,51 @@
 
 sudo: required
 
-before_install:
- - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
- - sudo add-apt-repository -y ppa:win-cross-dev/win-cross
- - sudo apt-get update -qq -y
- - sudo apt-get install -qq -y doxygen graphviz gcc-arm-none-eabi gcc-mingw-w64-x86-64 binutils-mingw-w64-x86-64 libssl-dev mingw64-openssl
-
-script:
- - export REV=dirty-$(git describe --always)
-
- - cd src
- - ./autogen.sh $FLAGS
- - doxygen
- - make install
- - cd ..
-
- - cd tools
- - ./autogen.sh $FLAGS
- - make install
- - make clean
- - cd ../out
- - tar -c * -f ../psp2sdk-$REV-amd64-pc-linux-gnu.tar
- - cd ..
- - rm -Rf out
-
- - make -C src install
- - cd tools
- - ./autogen.sh $FLAGS --host=x86_64-w64-mingw32
- - make install
- - make clean
- - cd ..
- - cp /usr/x86_64-w64-mingw32/bin/libeay32.dll out/bin
- - zip -0rq psp2sdk-$REV-x86_64-w64-mingw32.zip out
- - rm -Rf out
-
-after_success:
- - curl -q -T psp2sdk-$REV-amd64-pc-linux-gnu.tar -u $FTP ftp://wololo.net/
- - curl -q -T psp2sdk-$REV-x86_64-w64-mingw32.zip -u $FTP ftp://wololo.net/
- # Commit documentation on gh-pages, removing all history to prevent bloating
- - pushd $HOME
- - git clone -qb gh-pages --single-branch https://${TOKEN}@github.com/psp2dev/psp2sdk.git gh-pages
- - pushd gh-pages
- - git config user.name "Travis CI"
- - git config user.email contact@travis-ci.com
- - git rm -rf *
- - cp -r $TRAVIS_BUILD_DIR/src/html/* .
- - git add -f .
- - git commit --amend -am "Deploy $REV to Github Pages"
- - git push -fq origin gh-pages
- - popd
- - popd
+notifications:
+ email:
+  - ryp.sqrt@gmail.com
 
 env:
  global:
-  - FLAGS="-q --enable-silent-rules --prefix=$PWD/out"
+  - FLAGS="-q --prefix=$PWD/out"
   - secure: "GwNIOVZvxiqQDTikyaLjyNcz5UvrVE5wjoBfu6/vbzmBR1KS+QbVnYkbTv8enW8kua8ilJ3F4604HCc2pqu8d7B/ONHvgvkVTIIvczegketS136ZS8NdVyb1Lp18reVAIkYudxopkKfocwY9dAA33VZZ4OKp5aovQ1owtSJxxXeFjl7leS7MUzrv2ltkF/kZscPHEgIlw/EFWJpcW5bNUXkPh4aDjG6uR9lJRq8EHaMnELJwWtyEv34dmQ8SC70O5XOfxEy80iBs17mvNXykHXPtLpv061myxMJ84/4fGD6P/G7MT7qIWBew0wdY7FWkzWsZO1i6zfygGZPGGQD5I9QRcUSi7YFlxx9Nkm7ecrZbrU2UXhHtBi0kpnrPYAor9JlATOVjAP5UcNXZ/JD2Geb8jtEP+WT+MQt4tbOfObXJKiYdsLez9/xOZx3ReONoLNbKa4h+4j7bDdvAbxmDwcQaz8BNEeIZtqUnXMdOqK0amCxanhULrCA9sQmC2eaptCjilYjoCHBWe55/j+k0K3WFpEHjlv48uPsDx8kT0gO/fFdm4rQ+XSKhtQvqbWGMmkzQ1BMmE1Qd6D+GZirWrisDrs1ZeLrcWxGUv4mNdmwVnrFNwB2wLsus/JTJArQOvtdWbVC9x45xjGX5eUJfAg+8x3M/ppvuE2fKJ3lv94c="
   - secure: "GVfqB9TOUv9N4ow+7dw3SoIjiJxlZ1EYQs5hD9oF7OvSY/YgSwB9UHizyJNsq/A3X7E2UsDURKJ4HaY3Pt04TsmSZIjvlQMAZ/gw/pGlkr1XcQfbK6Jt3qP389IYxtM6mhH/EkfI6aYWW2qFWkmqyws3YLX3z69TVO6pthFwSm55r+2PmH+r1XbHwgeNcIs9C/wYo1pngAGtkaJwy/g6418j21dKlSZUCGe4Jd7ZF7Qj8jLmALy1dTk5Gnl6Mgta6fMo6+caZzruTT+PwgpHKOQZ4s/6YhUeRoixCNirhzGlhyYPXXsBD+DniqtNK5Dy9KzTKdgy/khlP+E60D8P0JH3L1J/a8DahJuZQw/XWRne91AcTYBS84zzdRGXeLv8RUf4glLY3mAAinqGX5bhKq3Ctq1adAfG7XhRGCJDJ3hkRVRAp1qCropqUsjrcUlmGnr4JfBi/oNYKrR1gXT/OMMRYHXnq1OTVj/OXv0lJCUyR+RzDM+ehM08PXaRKLJrrU/v7HkfAJULxagv2nJ/U9UMDy0CUWZrgCIIbbJ6XOTyJUDoZaiTElFTuZkvVAlUXrrESOA21zTU8gE6KiQ0yhEQtDjljae9Vn2Zdfxn96EX6JsymEF3yWxSa21nobV5KGwfzTyHEX4/YVErpN/LSO60GKsxVLXYO4isRYlflms="
+
+before_install:
+ - sudo add-apt-repository -y ppa:kalakris/cmake
+ - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
+ - sudo apt-get update -qq -y
+ - sudo apt-get install -qq cmake doxygen graphviz gcc-arm-none-eabi libssl-dev
+
+ - git clone https://github.com/173210/psp2sdk.git src/html -qb gh-pages --single-branch
+ - git -C src/html rm -qrf .
+ #- export REV=`git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g'` # Add this when the first release is out
+ #- export REV=`git describe --always`
+ - export REV=`printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"`
+
+script:
+ # Compile src folder
+ - mkdir -p src/build && pushd src/build
+ - cmake .. -DCMAKE_INSTALL_PREFIX=/opt/psp2sdk -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain-arm-none-eabi-psp2.cmake -DCMAKE_BUILD_TYPE=Release
+ - sudo make install
+ - popd
+ # Build documentation
+ - pushd src
+ - doxygen
+ - popd
+
+ # Compile tools folder
+ - mkdir -p tools/build && pushd tools/build
+ - cmake .. -DCMAKE_INSTALL_PREFIX=/opt/psp2sdk -DCMAKE_BUILD_TYPE=Release
+ - sudo make install
+ - popd
+
+after_success:
+ #- curl -q -T psp2sdk-$REV-amd64-pc-linux-gnu.tar -u $FTP ftp://wololo.net/
+ #- curl -q -T psp2sdk-$REV-x86_64-w64-mingw32.zip -u $FTP ftp://wololo.net/
+ #- cd src/html
+ #- git add .
+ #- git config user.name "Travis CI"
+ #- git config user.email contact@travis-ci.com
+ #- git commit -qm $REV
+ #- git push -q https://$TOKEN@github.com/173210/psp2sdk.git
